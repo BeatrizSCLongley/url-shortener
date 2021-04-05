@@ -1,0 +1,40 @@
+<%= flash[:error] %>
+
+<div class="container">
+  <div id="form-container" class="display-center">
+    <div id="form" class="display-center">
+      <%= simple_form_for @url do |f| %>
+        <%= f.input :long_url, required: true, label: 'Insert here the URL you would like to shorten' %>
+        <%= f.input :short_url, required: false, label: 'You can provide a custom shorten URL, or we will generate one for you' %>
+        <div class="display-center">
+          <%= f.submit "Generate Shorten URL", class: "btn-submit"%>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+    <h2 class="display-center margin-top-50">Click on the shortened URL to go to the original URL</h2>
+
+  <div id="url-list">
+    <% ordered_urls = @urls.sort {|url_1| url_1.created_at}%>
+    <% ordered_urls.each do |url| %>
+      <ul>
+        <li><%= link_to url.short_url, url.short_url, class: "btn-list", id: "btn-short-url" %></li>
+        <li id="text-long-url"><%= url.long_url %></li>
+        <li><%= link_to "Delete", url_path(url), class: "btn-list", id: "btn-delete", method: :delete %></li>
+      </ul>
+    <% end %>
+  </div>
+   <div id="url-list-mobile">
+    <% ordered_urls = @urls.sort {|url_1| url_1.created_at}%>
+    <% ordered_urls.each do |url| %>
+      <ul>
+        <div id="btns-mobile-container">
+          <li><%= link_to url.short_url, url.short_url, class: "btn-list", id: "btn-short-url-mobile" %></li>
+          <li><%= link_to "Delete", url_path(url), class: "btn-list", id: "btn-delete", method: :delete %></li>
+        </div>
+        <li id="text-long-url"><%= url.long_url %></li>
+      </ul>
+    <% end %>
+  </div>
+</div>

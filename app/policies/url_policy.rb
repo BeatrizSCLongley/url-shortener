@@ -5,11 +5,15 @@ class UrlPolicy < ApplicationPolicy
     end
   end
 
-  def create
+  def create?
     true
   end
 
-  def destroy
+  def destroy?
     record.user == user
+  end
+
+  def go?
+    true
   end
 end
