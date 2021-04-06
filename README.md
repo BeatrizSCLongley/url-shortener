@@ -1,24 +1,27 @@
-# README
+# URL Shortener
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Service to create shortened links from given urls.
+This service allows you to customize your short_url or it provides one based on a unique key with base 36.
 
-Things you may want to cover:
+*Example*
 
-* Ruby version
+Input (long_url):
+> https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 
-* System dependencies
+Output (short_url):
+> cssflexbox
 
-* Configuration
+*By clicking on cssflexbox the service will redirect you to the original source site.*
 
-* Database creation
+## How to access & use this service:
 
-* Database initialization
+1. You can find it deployed here:
+> https://url-shortener-beatriz.herokuapp.com/users/sign_up
 
-* How to run the test suite
+2. Create an account with an email address & password
 
-* Services (job queues, cache servers, search engines, etc.)
+3. Create your own shortened urls
 
-* Deployment instructions
+4. Click the button to be redirected or use the domain with the sort_url to access it in the future
 
-* ...
+> https://url-shortener-beatriz.herokuapp.com/*<short_url goes here>*
