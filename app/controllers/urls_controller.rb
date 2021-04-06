@@ -22,9 +22,14 @@ class UrlsController < ApplicationController
 
   def go
     @url = Url.find_by(short_url: params[:short_url])
-    render 'errors/404', status: 404 if @url.nil?
-    @url.update_attribute(:click, @url.click + 1)
-    redirect_to @url.long_url
+    authorize @url
+
+    if !@url.nil?
+      @url.update_attribute(:click, @url.click + 1)
+      redirect_to @url.long_url
+    else
+      render file: "#{Rails.root}/public/404.html", status: :not_found
+    end
   end
 
   def destroy

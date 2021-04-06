@@ -9,7 +9,12 @@ class Url < ApplicationRecord
   # generate short_url with a unique key with base 36
   # if no short_url is provided
   def generate_short_url
-    short_url.nil? || short_url.empty? ? rand(36**8).to_s(36) : short_url
+    if short_url.nil? || short_url.empty?
+      rand(36**8).to_s(36)
+    else
+      # make sure no special characters are included to avoid errors
+      short_url.downcase.gsub(/\W/, '')
+    end
   end
 
   # Before saving the long_url make sure to add http:// https://
