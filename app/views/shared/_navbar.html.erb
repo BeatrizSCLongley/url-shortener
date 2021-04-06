@@ -1,1 +1,13 @@
-
+<div class="navbar fixed-top">
+  <div>
+    <p><span class="bold-navbar">URL</span> Shortner</p>
+  </div>
+  <div id="links-navbar">
+    <% if user_signed_in? %>
+      <p>Welcome <span class="bold-navbar"><%= current_user.email %></span> </p>
+      <p><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "link-navbar" %></p>
+    <% else %>
+      <p><%= link_to "Login", new_user_session_path, class: "link-navbar"%></p>
+    <% end  %>
+  </div>
+</div>

@@ -1,6 +1,5 @@
 class UrlsController < ApplicationController
   def index
-    # @urls = Url.all
     @urls = policy_scope(Url).order(created_at: :asc)
     @url = Url.new
   end

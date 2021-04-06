@@ -1,1 +1,28 @@
+.navbar {
+  height: 40px;
+  background: #d9e2e7;
+  box-shadow:  22px 22px 50px #b2b9bd;
+}
 
+.bold-navbar {
+  color: #217596;
+  font-weight: bold;
+}
+
+#links-navbar {
+  display: flex;
+
+  p {
+    margin-right: 30px;
+  }
+}
+
+.link-navbar {
+  color: #3a525b;
+  font-weight: bold;
+
+  &:hover {
+    color: #ba3535;
+    text-decoration: none;
+  }
+}

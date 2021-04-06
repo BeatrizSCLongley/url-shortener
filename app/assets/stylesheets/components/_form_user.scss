@@ -1,0 +1,28 @@
+.user-form-center {
+  display: flex;
+  justify-content: center;
+}
+
+.user-form-container {
+  margin-top: 60px;
+  padding: 39px;
+  width: 75%;
+  border-radius: 49px;
+  background: #d9e2e7;
+  box-shadow:  22px 22px 50px #b2b9bd,
+               -22px -22px 50px #ffffff;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+}
+
+.devise-links {
+  color: #217596;
+
+  &:hover {
+    color: #ba3535;
+    text-decoration: none;
+  }
+}
